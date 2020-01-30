@@ -40,7 +40,7 @@ Take it from these satisfied customers who've downloaded and experiences *hush.*
  * Library fanatics.
  
 ## User stories  
-[User stories](user-stories)
+[User stories](user-stories.md)
 
 ## External services/data
 
