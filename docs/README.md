@@ -1,10 +1,52 @@
-## Description
-Tutor's premise would be to connect people together to find tutors who will provide services for those needing tutoring on specific subjects. The user would ping their location and what they need tutoring in, and tutors who are looking for work can pick up the job. Users will have to use phone number authentication to hold account holders liable. Tutors can customize their account to their liking, and better their account by increasing an implemented "star rating" system. Tutors who sign up will go through screening by monitoring the teachers overall quality of teaching.
+## *hush.*
+
+###### The purpose of the app!
+
+Silencing your phone has never been easier! Explore the effortless quality-of-life features that *hush.* has to provide! Life gets busy, and having the interruption of a phone call in the middle of important events can be embarrassing. Nevermind the embarrassing calls amidst a meeting, a movie at your local theater, or school! With *hush.*, it will do all the work for you!
+
+Take it from these satisfied customers who've downloaded and experiences *hush.* for themselves!
+
+ God:
+ > Brilliant! 10/10
+ 
+ The developer:
+ > ~~I hope this works~~ This app's functionality is mesmerizing!
+ 
+ Mom:
+ > How do I open Google? Hello?
+ 
+ ## Features!
+ 
+ ###### SAVE LOCATIONS
+ - Find and save any location on the map for future reference!
+ - Bookmark and note the destination by type and add things like titles and descriptions!
+ 
+ ###### GPS LOCATION
+ - See your current GPS on the map with user-friendly navigation!
+ - Locate yourself in real-time!
+ 
+ ###### CURRENT LOCATION
+ - It allows the user to see the current address and street. Never get lost again!
+ - Address and location searching. Allows the user to search easily for desired locations by name.
+ 
+ ###### NOTIFICATIONS
+ - Recieve a silent notification to indicate your *Silent* or *Vibrate-Mode* initiating.
+
 ## Intended users
-* Students in school who are struggling on a certain topic.
-* Teachers who can use their skill to provide tutoring lessons to people in need.
-* Parents who want to reach out to tutors to help their child.
-## External services
-* Google Maps
-* Google sign in OAuth 2.0
-* Email authentication
+
+ * Students in college or high school.0
+ * Office meeting attendees.
+ * Theater enthusiasts.
+ * Library fanatics.
+ 
+## User stories  
+[User stories](user-stories)
+
+## External services/data
+
+* Map services via Google
+ - Place search
+ - Place details
+ - Query Autocomplete
+ 
+* Google Sign-In
