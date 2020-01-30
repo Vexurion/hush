@@ -15,21 +15,21 @@ Take it from these satisfied customers who've downloaded and experiences *hush.*
  Mom:
  > How do I open Google? Hello?
  
- ## Features!
+## Features!
  
- ###### SAVE LOCATIONS
+###### SAVE LOCATIONS
  - Find and save any location on the map for future reference!
  - Bookmark and note the destination by type and add things like titles and descriptions!
  
- ###### GPS LOCATION
+###### GPS LOCATION
  - See your current GPS on the map with user-friendly navigation!
  - Locate yourself in real-time!
  
- ###### CURRENT LOCATION
+###### CURRENT LOCATION
  - It allows the user to see the current address and street. Never get lost again!
  - Address and location searching. Allows the user to search easily for desired locations by name.
  
- ###### NOTIFICATIONS
+###### NOTIFICATIONS
  - Recieve a silent notification to indicate your *Silent* or *Vibrate-Mode* initiating.
 
 ## Intended users
