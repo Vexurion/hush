@@ -16,8 +16,8 @@ public class User {
   private long id;
 
   //add (..., index = true) after (name = "...") for Foreign Keys, and stuff you think you'll be searching or indexing.
-  @ColumnInfo(name = "oauth_id")
-  private String oauth;
+  @ColumnInfo(name = "oauth_key")
+  private String oauthKey;
 
   // used index = true for a IX1?? No understando
   @ColumnInfo(name = "created_id", index = true)
@@ -39,11 +39,11 @@ public class User {
   }
 
   public String getOauth() {
-    return oauth;
+    return oauthKey;
   }
 
   public void setOauth(String oauth) {
-    this.oauth = oauth;
+    this.oauthKey = oauth;
   }
 
   public Date getCreated() {

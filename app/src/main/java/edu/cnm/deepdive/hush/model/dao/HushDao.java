@@ -20,13 +20,14 @@ public interface HushDao {
   Single<Long> insert(Hush hush);
 
   @Insert(onConflict = OnConflictStrategy.IGNORE)
-  Single<List<Long>> insert(Collection<Hush> husher);
+  Single<List<Long>> insert(Collection<Hush> hushes);
+  //Question on whether this inserts a list of hushes?
 
   @Update
   Single<Integer> update(Hush hush);
 
   @Delete
-  Single<Integer> delete(Hush... husher);
+  Single<Integer> delete(Hush... hushes);
 
   @Query("SELECT * FROM Hush WHERE date = :date")
   Maybe<Hush> select(Date date);

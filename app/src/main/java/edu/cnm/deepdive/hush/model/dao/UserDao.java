@@ -8,24 +8,38 @@ import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
 import androidx.room.Update;
 import edu.cnm.deepdive.hush.model.entity.Hush;
+import edu.cnm.deepdive.hush.model.entity.User;
+import io.reactivex.Maybe;
 import io.reactivex.Single;
 import java.util.Collection;
+import java.util.Date;
 import java.util.List;
 
 @Dao
 public interface UserDao {
-  @Insert(onConflict = OnConflictStrategy.IGNORE)
-  Single<Long> insert(Hush hush);
 
-  @Insert(onConflict = OnConflictStrategy.IGNORE)
-  Single<List<Long>> insert(Collection<Hush> husher);
+ @Insert
+ Single<Long> insert(User user);
 
-  @Update
-  Single<Integer> update(Hush hush);
+ @Insert
+ Single<List<Long>> insert(Collection<User> users);
 
-  @Delete
-  Single<Integer> delete(Hush... husher);
+ @Delete
+ Single<Integer> delete(User user);
 
-  @Query("SELECT * FROM Hush ORDER BY date")
-  LiveData<List<Hush>> select();
+ @Delete
+ Single<Integer> delete(Collection<User> apods);
+
+ @Query("SELECT * FROM User ORDER BY user_id ASC")
+ LiveData<List<User>> getAllId();
+
+ @Query("SELECT * FROM User WHERE oauth_key = :oauthKey")
+ Maybe<User> getByOauth(String oauthKey);
+
+
+
+
+
+
+
 }

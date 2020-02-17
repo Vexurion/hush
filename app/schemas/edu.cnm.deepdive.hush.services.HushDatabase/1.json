@@ -1,0 +1,198 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "325eadda690756861bfc737b9bb11f55",
+    "entities": [
+      {
+        "tableName": "Hush",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`hush_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `user_id` INTEGER NOT NULL, `longitude_id` REAL NOT NULL, `latitude_id` REAL NOT NULL, `description_method` TEXT COLLATE NOCASE, `private_id` INTEGER NOT NULL, `created_id` INTEGER, `date` INTEGER NOT NULL, FOREIGN KEY(`user_id`) REFERENCES `User`(`user_id`) ON UPDATE NO ACTION ON DELETE CASCADE )",
+        "fields": [
+          {
+            "fieldPath": "hush",
+            "columnName": "hush_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "user",
+            "columnName": "user_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "longitude",
+            "columnName": "longitude_id",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "latitude",
+            "columnName": "latitude_id",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "description",
+            "columnName": "description_method",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "unique",
+            "columnName": "private_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "created",
+            "columnName": "created_id",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "date",
+            "columnName": "date",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "hush_id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [
+          {
+            "name": "index_Hush_longitude_id",
+            "unique": true,
+            "columnNames": [
+              "longitude_id"
+            ],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_Hush_longitude_id` ON `${TABLE_NAME}` (`longitude_id`)"
+          },
+          {
+            "name": "index_Hush_latitude_id",
+            "unique": true,
+            "columnNames": [
+              "latitude_id"
+            ],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_Hush_latitude_id` ON `${TABLE_NAME}` (`latitude_id`)"
+          },
+          {
+            "name": "index_Hush_hush_id",
+            "unique": true,
+            "columnNames": [
+              "hush_id"
+            ],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_Hush_hush_id` ON `${TABLE_NAME}` (`hush_id`)"
+          },
+          {
+            "name": "index_Hush_user_id",
+            "unique": false,
+            "columnNames": [
+              "user_id"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_Hush_user_id` ON `${TABLE_NAME}` (`user_id`)"
+          },
+          {
+            "name": "index_Hush_created_id",
+            "unique": false,
+            "columnNames": [
+              "created_id"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_Hush_created_id` ON `${TABLE_NAME}` (`created_id`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "User",
+            "onDelete": "CASCADE",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "user_id"
+            ],
+            "referencedColumns": [
+              "user_id"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "User",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`user_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `oauth_id` TEXT, `created_id` INTEGER, `update_id` INTEGER, `success` INTEGER NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "user_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "oauth",
+            "columnName": "oauth_id",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "created",
+            "columnName": "created_id",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "update",
+            "columnName": "update_id",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "success",
+            "columnName": "success",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "user_id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [
+          {
+            "name": "index_User_created_id",
+            "unique": false,
+            "columnNames": [
+              "created_id"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_User_created_id` ON `${TABLE_NAME}` (`created_id`)"
+          },
+          {
+            "name": "index_User_update_id",
+            "unique": false,
+            "columnNames": [
+              "update_id"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_User_update_id` ON `${TABLE_NAME}` (`update_id`)"
+          },
+          {
+            "name": "index_User_success",
+            "unique": false,
+            "columnNames": [
+              "success"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_User_success` ON `${TABLE_NAME}` (`success`)"
+          }
+        ],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '325eadda690756861bfc737b9bb11f55')"
+    ]
+  }
+}
