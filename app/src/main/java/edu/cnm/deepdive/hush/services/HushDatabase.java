@@ -41,7 +41,6 @@ public abstract class HushDatabase extends RoomDatabase {
     private static final HushDatabase INSTANCE = Room.databaseBuilder(
         context, HushDatabase.class, DB_NAME)
         .build();
-
   }
 
   public static class Converters {

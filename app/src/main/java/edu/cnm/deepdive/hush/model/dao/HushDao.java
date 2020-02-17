@@ -34,5 +34,6 @@ public interface HushDao {
 
   @Query("SELECT * FROM Hush ORDER BY longitude_id = :longitude_id")
   LiveData<List<Hush>> select(double longitude_id);
+  //TODO Refine query
 
 }

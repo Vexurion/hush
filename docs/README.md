@@ -33,6 +33,7 @@ Silencing your phone has never been easier! Explore the effortless quality-of-li
 
 ## ERD documentation
 [ERD for Hush](erd.md)
+// TODO update.
 ## Wire-framing for my project.
 [Wire-frame for Hush](wire-frame.md)
 

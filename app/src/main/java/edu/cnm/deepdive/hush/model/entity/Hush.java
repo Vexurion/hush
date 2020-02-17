@@ -5,7 +5,6 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.ForeignKey;
 import androidx.room.Index;
-import androidx.room.Insert;
 import androidx.room.PrimaryKey;
 import com.google.gson.annotations.Expose;
 import java.util.Date;
@@ -20,16 +19,13 @@ import java.util.Date;
         )
     },
     indices = {
-        @Index(value = "longitude_id", unique = true),
-        @Index(value = "latitude_id", unique = true),
-        @Index(value = "hush_id", unique = true)
-
+        @Index(value = {"longitude_id","latitude_id"}, unique = true),
 })
 public class Hush {
 
   @ColumnInfo(name = "hush_id")
   @PrimaryKey(autoGenerate = true)
-  private long hush;
+  private long id;
 
   @ColumnInfo(name = "user_id", index = true)
   private long user;
@@ -40,15 +36,16 @@ public class Hush {
   @ColumnInfo(name = "latitude_id")
   private double latitude;
 
-  @ColumnInfo(name = "description_method", collate = ColumnInfo.NOCASE)
+  @ColumnInfo(collate = ColumnInfo.NOCASE)
   private String description;
 
-  @ColumnInfo(name = "private_id")
-  private boolean unique;
+  @ColumnInfo(name = "private")
+  private boolean prvt;
 
-  @ColumnInfo(name = "created_id", index = true)
-  private Date created;
+  @ColumnInfo(index = true)
+  private Date created = new Date();
 
+  //clarification
   @NonNull
   @Expose
   private Date date;
@@ -62,12 +59,12 @@ public class Hush {
     this.date = date;
   }
 
-  public long getHush() {
-    return hush;
+  public long getId() {
+    return id;
   }
 
-  public void setHush(long hush) {
-    this.hush = hush;
+  public void setId(long id) {
+    this.id = id;
   }
 
   public long getUser() {
@@ -102,12 +99,12 @@ public class Hush {
     this.description = description;
   }
 
-  public boolean isUnique() {
-    return unique;
+  public boolean isPrivate() {
+    return prvt;
   }
 
-  public void setUnique(boolean unique) {
-    this.unique = unique;
+  public void setPrivate(boolean unique) {
+    this.prvt = unique;
   }
 
   public Date getCreated() {

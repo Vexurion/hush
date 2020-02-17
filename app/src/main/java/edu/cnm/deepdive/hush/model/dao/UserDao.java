@@ -28,7 +28,7 @@ public interface UserDao {
  Single<Integer> delete(User user);
 
  @Delete
- Single<Integer> delete(Collection<User> apods);
+ Single<Integer> delete(Collection<User> users);
 
  @Query("SELECT * FROM User ORDER BY user_id ASC")
  LiveData<List<User>> getAllId();
