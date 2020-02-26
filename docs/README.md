@@ -49,6 +49,8 @@ Silencing your phone has never been easier! Explore the effortless quality-of-li
     * <u>Site URL</u>: https://developer.tomtom.com/map-display-api
     * <u>Service use</u>: TomTom Map Display will be used to integrate it's many API features such as <i>Search</i>, <i>Location History</i>, and <i>Geofencing</i> into my application.
     * <u>Required</u>: Yes, because it's required to display the map, geofencing, and search features provided by the API.
+   
+## Data Information    
     
 ### Data Access Objects
 
