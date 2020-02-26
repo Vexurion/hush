@@ -27,8 +27,6 @@ public class User {
   @ColumnInfo(index = true)
   private Date updated;
 
-  @ColumnInfo(index = true)
-  private boolean success;
 
   public long getId() {
     return id;
@@ -60,13 +58,5 @@ public class User {
 
   public void setUpdated(Date updated) {
     this.updated = updated;
-  }
-
-  public boolean isSuccess() {
-    return success;
-  }
-
-  public void setSuccess(boolean success) {
-    this.success = success;
   }
 }
