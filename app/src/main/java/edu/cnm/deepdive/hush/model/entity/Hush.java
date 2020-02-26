@@ -107,11 +107,23 @@ public class Hush {
     return id;
   }
 
+  public void setId(long id) {
+    this.id = id;
+  }
+
   public long getUser() {
     return user;
   }
 
+  public void setUser(long user) {
+    this.user = user;
+  }
+
   public Date getCreated() {
     return created;
+  }
+
+  public void setCreated(@NonNull Date created) {
+    this.created = created;
   }
 }

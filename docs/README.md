@@ -50,5 +50,9 @@ Silencing your phone has never been easier! Explore the effortless quality-of-li
     * <u>Service use</u>: TomTom Map Display will be used to integrate it's many API features such as <i>Search</i>, <i>Location History</i>, and <i>Geofencing</i> into my application.
     * <u>Required</u>: Yes, because it's required to display the map, geofencing, and search features provided by the API.
 
-## Implementation
-*
+## Entity classes
+
+* [Hush.java](https://github.com/Vexurion/hush/blob/master/app/src/main/java/edu/cnm/deepdive/hush/model/entity/Hush.java)
+* [User.java](https://github.com/Vexurion/hush/blob/master/app/src/main/java/edu/cnm/deepdive/hush/model/entity/User.java)
+
+
