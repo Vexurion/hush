@@ -1,5 +1,6 @@
 package edu.cnm.deepdive.hush.model.entity;
 
+import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.Index;
@@ -18,12 +19,15 @@ public class User {
   @PrimaryKey(autoGenerate = true)
   private long id;
 
+  @NonNull
   @ColumnInfo(name = "oauth_key")
   private String oauthKey;
 
+  @NonNull
   @ColumnInfo(index = true)
   private Date created;
 
+  @NonNull
   @ColumnInfo(index = true)
   private Date updated;
 

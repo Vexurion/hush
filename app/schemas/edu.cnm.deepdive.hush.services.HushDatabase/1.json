@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "1a09c70600f3a47b7cb09d8a73627335",
+    "identityHash": "0a96e5dc806db7f058b39ad03b7e92f0",
     "entities": [
       {
         "tableName": "Hush",
@@ -128,7 +128,7 @@
       },
       {
         "tableName": "User",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`user_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `oauth_key` TEXT, `created` INTEGER, `updated` INTEGER)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`user_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `oauth_key` TEXT NOT NULL, `created` INTEGER NOT NULL, `updated` INTEGER NOT NULL)",
         "fields": [
           {
             "fieldPath": "id",
@@ -140,19 +140,19 @@
             "fieldPath": "oauthKey",
             "columnName": "oauth_key",
             "affinity": "TEXT",
-            "notNull": false
+            "notNull": true
           },
           {
             "fieldPath": "created",
             "columnName": "created",
             "affinity": "INTEGER",
-            "notNull": false
+            "notNull": true
           },
           {
             "fieldPath": "updated",
             "columnName": "updated",
             "affinity": "INTEGER",
-            "notNull": false
+            "notNull": true
           }
         ],
         "primaryKey": {
@@ -193,7 +193,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '1a09c70600f3a47b7cb09d8a73627335')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '0a96e5dc806db7f058b39ad03b7e92f0')"
     ]
   }
 }

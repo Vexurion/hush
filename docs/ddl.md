@@ -1,3 +1,6 @@
+# SQL data definition language (DDL)
+
+```sqlite
 CREATE TABLE IF NOT EXISTS `Hush`
 (
     `hush_id`      INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
@@ -26,3 +29,6 @@ CREATE TABLE IF NOT EXISTS User
 CREATE UNIQUE INDEX IF NOT EXISTS `index_User_oauth_key` ON User (`oauth_key`);
 CREATE INDEX IF NOT EXISTS `index_User_created` ON User (`created`);
 CREATE INDEX IF NOT EXISTS `index_User_updated` ON User (`updated`);
+```
+
+[Download](ddl.sql)
