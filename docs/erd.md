@@ -1,1 +1,1 @@
-[![Hush ERD](hush_erd%20.png)](hush_erd%20.pdf)
+[![Hush ERD](hush_erd.png)](hush_erd.pdf)

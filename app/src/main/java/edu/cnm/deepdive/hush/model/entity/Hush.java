@@ -5,13 +5,11 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.ForeignKey;
 import androidx.room.Index;
-import androidx.room.Insert;
 import androidx.room.PrimaryKey;
-import com.google.gson.annotations.Expose;
 import java.util.Date;
 
 @Entity(
-    foreignKeys =  {
+    foreignKeys = {
         @ForeignKey(
             entity = User.class,
             parentColumns = "user_id",
@@ -20,63 +18,42 @@ import java.util.Date;
         )
     },
     indices = {
-        @Index(value = "longitude_id", unique = true),
-        @Index(value = "latitude_id", unique = true),
-        @Index(value = "hush_id", unique = true)
-
-})
+        @Index(value = {"longitude_id", "latitude_id"}, unique = true),
+    })
 public class Hush {
 
   @ColumnInfo(name = "hush_id")
   @PrimaryKey(autoGenerate = true)
-  private long hush;
+  private long id;
 
+  @NonNull
   @ColumnInfo(name = "user_id", index = true)
   private long user;
 
+  @NonNull
   @ColumnInfo(name = "longitude_id")
   private double longitude;
 
+  @NonNull
   @ColumnInfo(name = "latitude_id")
   private double latitude;
 
-  @ColumnInfo(name = "description_method", collate = ColumnInfo.NOCASE)
-  private String description;
+  @ColumnInfo(collate = ColumnInfo.NOCASE, index = true)
+  private String title;
 
-  @ColumnInfo(name = "private_id")
-  private boolean unique;
+  @NonNull
+  private int radius;
 
-  @ColumnInfo(name = "created_id", index = true)
+  @NonNull
+  private boolean vibrate;
+
+  @NonNull
+  @ColumnInfo(index = true)
   private Date created;
 
-  @NonNull
-  @Expose
-  private Date date;
+  @ColumnInfo(index = true)
+  private Date updated;
 
-  @NonNull
-  public Date getDate() {
-    return date;
-  }
-
-  public void setDate(@NonNull Date date) {
-    this.date = date;
-  }
-
-  public long getHush() {
-    return hush;
-  }
-
-  public void setHush(long hush) {
-    this.hush = hush;
-  }
-
-  public long getUser() {
-    return user;
-  }
-
-  public void setUser(long user) {
-    this.user = user;
-  }
 
   public double getLongitude() {
     return longitude;
@@ -94,27 +71,47 @@ public class Hush {
     this.latitude = latitude;
   }
 
-  public String getDescription() {
-    return description;
+  public String getTitle() {
+    return title;
   }
 
-  public void setDescription(String description) {
-    this.description = description;
+  public void setTitle(String title) {
+    this.title = title;
   }
 
-  public boolean isUnique() {
-    return unique;
+  public int getRadius() {
+    return radius;
   }
 
-  public void setUnique(boolean unique) {
-    this.unique = unique;
+  public void setRadius(int radius) {
+    this.radius = radius;
+  }
+
+  public boolean isVibrate() {
+    return vibrate;
+  }
+
+  public void setVibrate(boolean vibrate) {
+    this.vibrate = vibrate;
+  }
+
+  public Date getUpdated() {
+    return updated;
+  }
+
+  public void setUpdated(Date updated) {
+    this.updated = updated;
+  }
+
+  public long getId() {
+    return id;
+  }
+
+  public long getUser() {
+    return user;
   }
 
   public Date getCreated() {
     return created;
-  }
-
-  public void setCreated(Date created) {
-    this.created = created;
   }
 }

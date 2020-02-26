@@ -2,12 +2,15 @@ package edu.cnm.deepdive.hush.model.entity;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
-import androidx.room.ForeignKey;
+import androidx.room.Index;
 import androidx.room.PrimaryKey;
 import java.util.Date;
 
-@Entity
-
+@Entity(
+    indices = {
+        @Index(value = "oauth_key", unique = true)
+    }
+)
 public class User {
 
 
@@ -15,20 +18,15 @@ public class User {
   @PrimaryKey(autoGenerate = true)
   private long id;
 
-  //add (..., index = true) after (name = "...") for Foreign Keys, and stuff you think you'll be searching or indexing.
   @ColumnInfo(name = "oauth_key")
   private String oauthKey;
 
-  // used index = true for a IX1?? No understando
-  @ColumnInfo(name = "created_id", index = true)
+  @ColumnInfo(index = true)
   private Date created;
 
-  // @ColumnInfo(collate = ColumnInfo.NOCASE)
-  @ColumnInfo(name = "update_id", index = true)
-  private Date update;
-
   @ColumnInfo(index = true)
-  private boolean success;
+  private Date updated;
+
 
   public long getId() {
     return id;
@@ -38,11 +36,11 @@ public class User {
     this.id = id;
   }
 
-  public String getOauth() {
+  public String getOauthKey() {
     return oauthKey;
   }
 
-  public void setOauth(String oauth) {
+  public void setOauthKey(String oauth) {
     this.oauthKey = oauth;
   }
 
@@ -54,19 +52,11 @@ public class User {
     this.created = created;
   }
 
-  public Date getUpdate() {
-    return update;
+  public Date getUpdated() {
+    return updated;
   }
 
-  public void setUpdate(Date update) {
-    this.update = update;
-  }
-
-  public boolean isSuccess() {
-    return success;
-  }
-
-  public void setSuccess(boolean success) {
-    this.success = success;
+  public void setUpdated(Date updated) {
+    this.updated = updated;
   }
 }
