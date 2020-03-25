@@ -1,14 +1,30 @@
 apply plugin: 'com.android.application'
+
+static def getProperty(String propertyFile, String propertyName) {
+    Properties properties = new Properties()
+    properties.load(new FileInputStream(propertyFile))
+    return String.format("\"%s\"", properties.getProperty(propertyName))
+}
+
+def static getUnquotedProperty (String propertyFile, String propertyName) {
+    Properties properties = new Properties();
+    properties.load(new FileInputStream(propertyFile));
+    return properties.getProperty(propertyName);
+}
 android {
     compileSdkVersion 29
-    buildToolsVersion "29.0.2"
+    buildToolsVersion "29.0.3"
     defaultConfig {
-        applicationId "edu.cnm.deepdive.grassrootseasysteps"
+        applicationId "edu.cnm.deepdive.hush"
         minSdkVersion 21
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        buildConfigField "String", "CLIENT_ID","\"528437356095-p70v8rjm5094g9g6qfemp3n4nlltbio5.apps.googleusercontent.com\""
+        buildConfigField "String", "API_KEY",
+                getProperty("$projectDir/../../../services/google.properties", "api_key")
+        resValue "string", "api_key", getUnquotedProperty("$projectDir/../../../services/google.properties", "api_key")
         javaCompileOptions {
             annotationProcessorOptions {
                 arguments = ["room.schemaLocation": "$projectDir/schemas".toString()]
@@ -39,13 +55,13 @@ dependencies {
     // Material Design-related dependencies
     implementation 'com.google.android.material:material:1.1.0'
     // ReactiveX-related dependencies
-    implementation 'io.reactivex.rxjava2:rxjava:2.2.10'
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.17'
     implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
     // Room- and SQLite-related dependencies
     def room_version = "2.2.3"
     implementation "androidx.room:room-runtime:$room_version"
-    implementation 'androidx.navigation:navigation-fragment:2.2.0'
-    implementation 'androidx.navigation:navigation-ui:2.2.0'
+    implementation 'androidx.navigation:navigation-fragment:2.2.1'
+    implementation 'androidx.navigation:navigation-ui:2.2.1'
     annotationProcessor "androidx.room:room-compiler:$room_version"
     implementation "androidx.room:room-rxjava2:$room_version"
     // Stetho (inspection) dependency
@@ -63,7 +79,3 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
     implementation 'com.google.android.gms:play-services-maps:17.0.0'
 }
-
-
-
-
