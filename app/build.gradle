@@ -6,11 +6,12 @@ static def getProperty(String propertyFile, String propertyName) {
     return String.format("\"%s\"", properties.getProperty(propertyName))
 }
 
-def static getUnquotedProperty (String propertyFile, String propertyName) {
+def static getUnquotedProperty(String propertyFile, String propertyName) {
     Properties properties = new Properties();
     properties.load(new FileInputStream(propertyFile));
     return properties.getProperty(propertyName);
 }
+
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.3"
@@ -21,7 +22,7 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        buildConfigField "String", "CLIENT_ID","\"528437356095-p70v8rjm5094g9g6qfemp3n4nlltbio5.apps.googleusercontent.com\""
+        buildConfigField "String", "CLIENT_ID", "\"528437356095-p70v8rjm5094g9g6qfemp3n4nlltbio5.apps.googleusercontent.com\""
         buildConfigField "String", "API_KEY",
                 getProperty("$projectDir/../../../services/google.properties", "api_key")
         resValue "string", "api_key", getUnquotedProperty("$projectDir/../../../services/google.properties", "api_key")
@@ -58,10 +59,11 @@ dependencies {
     implementation 'io.reactivex.rxjava2:rxjava:2.2.17'
     implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
     // Room- and SQLite-related dependencies
-    def room_version = "2.2.3"
+    def room_version = "2.2.5"
     implementation "androidx.room:room-runtime:$room_version"
     implementation 'androidx.navigation:navigation-fragment:2.2.1'
     implementation 'androidx.navigation:navigation-ui:2.2.1'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     annotationProcessor "androidx.room:room-compiler:$room_version"
     implementation "androidx.room:room-rxjava2:$room_version"
     // Stetho (inspection) dependency
