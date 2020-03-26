@@ -1,7 +1,7 @@
 package edu.cnm.deepdive.hush.model.repository;
 
 import android.app.Application;
-import edu.cnm.deepdive.hush.services.HushDatabase;
+import edu.cnm.deepdive.hush.service.HushDatabase;
 
 public class UserRepository {
 

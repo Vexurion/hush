@@ -16,4 +16,5 @@
   <string name="title_home">Hush Home</string>
   <string name="title_location_list">Hush Locations</string>
   <string name="title_history">Hush History</string>
+  <string name="login_failure">Unable to authenticate with provided credentials</string>
 </resources>

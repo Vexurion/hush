@@ -1,4 +1,4 @@
-package edu.cnm.deepdive.hush.services;
+package edu.cnm.deepdive.hush.service;
 import android.app.Application;
 import androidx.room.Database;
 import androidx.room.Room;
@@ -9,7 +9,7 @@ import edu.cnm.deepdive.hush.model.dao.HushDao;
 import edu.cnm.deepdive.hush.model.dao.UserDao;
 import edu.cnm.deepdive.hush.model.entity.Hush;
 import edu.cnm.deepdive.hush.model.entity.User;
-import edu.cnm.deepdive.hush.services.HushDatabase.Converters;
+import edu.cnm.deepdive.hush.service.HushDatabase.Converters;
 import java.util.Date;
 
 @Database(

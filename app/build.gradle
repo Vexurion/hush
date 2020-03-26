@@ -22,9 +22,6 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        buildConfigField "String", "CLIENT_ID", "\"528437356095-p70v8rjm5094g9g6qfemp3n4nlltbio5.apps.googleusercontent.com\""
-        buildConfigField "String", "API_KEY",
-                getProperty("$projectDir/../../../services/google.properties", "api_key")
         resValue "string", "api_key", getUnquotedProperty("$projectDir/../../../services/google.properties", "api_key")
         javaCompileOptions {
             annotationProcessorOptions {
@@ -80,4 +77,5 @@ dependencies {
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
     implementation 'com.google.android.gms:play-services-maps:17.0.0'
+    implementation 'com.google.android.gms:play-services-auth:17.0.0'
 }
