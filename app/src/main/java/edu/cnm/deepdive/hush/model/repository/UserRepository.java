@@ -1,30 +1,18 @@
 package edu.cnm.deepdive.hush.model.repository;
 
-import android.app.Application;
+import android.content.Context;
 import edu.cnm.deepdive.hush.service.HushDatabase;
 
 public class UserRepository {
 
     private final HushDatabase database;
-    private static Application context;
-    private UserRepository() {
-      if (context == null) {
-        throw new IllegalStateException();
-      }
+    private final Context context;
+
+    public UserRepository(Context context) {
+      this.context = context;
       database = HushDatabase.getInstance();
-    }
-    public HushDatabase getDatabase() {
-      return database;
-    }
-    public static Application getContext() {
-      return context;
-    }
-    public static void setContext(Application context) {
-      UserRepository.context = context;
-    }
-    private static class InstanceHolder {
-    private static final UserRepository INSTANCE = new UserRepository();
+      //TODO Connect to Doa's
     }
 
-
+    //TODO Create methods that invoke dao methods.
 }

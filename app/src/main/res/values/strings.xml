@@ -17,4 +17,8 @@
   <string name="title_location_list">Hush Locations</string>
   <string name="title_history">Hush History</string>
   <string name="login_failure">Unable to authenticate with provided credentials</string>
+  <string name="permissions_title">Permissions</string>
+  <string name="access_fine_location_explanation">Access to location is needed for ringer to know when it needs to be silenced.</string>
+  <string name="modify_audio_settings_explanation">In order to mute the device, this app needs access to audio settings.</string>
+  <string name="access_notification_policy_explanation">To change the ring volume policy, this app needs access to notification policies.</string>
 </resources>

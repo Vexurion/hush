@@ -3,6 +3,8 @@
   xmlns:tools="http://schemas.android.com/tools"
   package="edu.cnm.deepdive.hush">
 
+  <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
+  <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY"/>
   <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
 
   <application
@@ -24,6 +26,11 @@
         <category android:name="android.intent.category.LAUNCHER"/>
       </intent-filter>
     </activity>
+
+    <activity
+      android:label="@string/title_activity_main"
+      android:name=".controller.MainActivity">
+    </activity>
     <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -32,14 +39,15 @@
              sign the APK for publishing.
              You can define the keys for the debug and release targets in src/debug/ and src/release/.
         -->
-    <activity
-      android:label="@string/title_activity_main"
-      android:name=".controller.MainActivity">
-    </activity>
-
     <meta-data
       android:name="com.google.android.geo.API_KEY"
       android:value="@string/api_key"/>
+
+    <service
+      android:enabled="true"
+      android:exported="true"
+      android:name=".service.LocationMonitorService">
+    </service>
   </application>
 
 </manifest>
